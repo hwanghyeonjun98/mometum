@@ -41,8 +41,9 @@ const inputCheck = (id) => {
 					name="todo"
 					@click="inputCheck(todo.id)"
 				>
+				<span></span>
 			</div>
-			<p class="todo-text">
+			<p :class="checked ? 'completed' : ''" class="todo-text">
 				<label :for="`todo-check-${todo.id}`">{{ todo.content }}</label>
 			</p>
 		</div>
@@ -61,13 +62,17 @@ const inputCheck = (id) => {
 }
 
 .todo {
-	padding: 1rem;
+	padding: .5rem;
 	margin-bottom: 1rem;
 	border-bottom: 1px solid rgba(0, 0, 0, .2);
 }
 
 .todo-text {
 	margin: 0;
+}
+
+.todo-text label {
+	padding: .5rem;
 }
 
 </style>

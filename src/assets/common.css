@@ -12,3 +12,40 @@
 	width: 100%;
 	min-height: 100vh;
 }
+
+.todo-text.completed label {
+	text-decoration: line-through;
+}
+
+.todo-checkbox span {
+	position: relative;
+	top: 3px;
+	display: inline-block;
+	width: 15px;
+	height: 15px;
+	border: 1px solid #aeaeae;
+	border-radius: 3px;
+}
+
+input[id^=todo-check-] {
+	display: none;
+}
+
+.todo-checkbox input[id^=todo-check-] ~ span::before {
+	content: '';
+	position: absolute;
+	top: 46%;
+	left: 50%;
+	transform: translate(-50%, -50%) rotateZ(45deg);
+	width: 4px;
+	height: 8px;
+	border-right: 3px solid blue;
+	border-bottom: 3px solid blue;
+	border-radius: 2px;
+	opacity: 0;
+	transition: opacity 0.2s;
+}
+
+.todo-checkbox input[id^=todo-check-]:checked ~ span::before {
+	opacity: 1;
+}
