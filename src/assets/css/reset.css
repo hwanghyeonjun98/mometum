@@ -1,5 +1,11 @@
 @charset "UTF-8";
 
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
 ul,
 ol {
 	margin: 0;
@@ -13,11 +19,20 @@ a {
 }
 
 button {
+	padding: .4rem;
 	background-color: transparent;
 	border: 0;
+	outline: none;
 }
 
 button, label {
 	display: inline-block;
 	cursor: pointer;
+}
+
+input[type=text] {
+	border: 0;
+	outline: none;
+	background-color: transparent;
+	padding: .2rem;
 }

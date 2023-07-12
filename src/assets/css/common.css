@@ -8,9 +8,15 @@
 	text-transform: capitalize;
 }
 
+button.btn-round {
+	border-radius: 4px;
+}
+
 .background {
 	width: 100%;
 	min-height: 100vh;
+	padding: 1rem;
+	background: url("");
 }
 
 .todo-text.completed label {
@@ -23,6 +29,7 @@
 	display: inline-block;
 	width: 15px;
 	height: 15px;
+	background-color: #fafafa;
 	border: 1px solid #aeaeae;
 	border-radius: 3px;
 }
@@ -34,7 +41,7 @@ input[id^=todo-check-] {
 .todo-checkbox input[id^=todo-check-] ~ span::before {
 	content: '';
 	position: absolute;
-	top: 46%;
+	top: 47%;
 	left: 50%;
 	transform: translate(-50%, -50%) rotateZ(45deg);
 	width: 4px;

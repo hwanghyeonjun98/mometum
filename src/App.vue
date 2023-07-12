@@ -7,6 +7,6 @@ import Home from "@/page/Home.vue";
 </template>
 
 <style>
-@import "../src/assets/reset.css";
-@import "../src/assets/common.css";
+@import "../src/assets/css/reset.css";
+@import "../src/assets/css/common.css";
 </style>

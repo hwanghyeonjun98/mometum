@@ -32,7 +32,8 @@ const inputCheck = (id) => {
 
 <template>
 	<li class="todo">
-		<div class="todo-content">
+		<div :class="checked ? 'completed' : ''" class="todo-content">
+			<div :class="checked ? 'completed' : 'doing'" class="color-head"></div>
 			<div class="todo-checkbox">
 				<input
 					type="checkbox"
@@ -65,6 +66,10 @@ const inputCheck = (id) => {
 	padding: .5rem;
 	margin-bottom: 1rem;
 	border-bottom: 1px solid rgba(0, 0, 0, .2);
+}
+
+.todo > .todo-content.completed {
+	opacity: .2;
 }
 
 .todo-text {
