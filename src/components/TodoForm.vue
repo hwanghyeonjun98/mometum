@@ -2,6 +2,8 @@
 import {ref} from "vue";
 import axios from "axios";
 
+const emit = defineEmits(["getTodos"]);
+
 const todoInput = ref("");
 
 const todoAdd = () => {
@@ -11,12 +13,13 @@ const todoAdd = () => {
 		created   : new Date().getTime(),
 	};
 
-	console.log(todoItem);
-
 	axios.post("http://localhost:3000/todos", todoItem, {
 		headers : {
 			"Content-Type" : "application/json",
 		},
+	}).then(() => {
+		emit("getTodos");
+		todoInput.value = "";
 	});
 };
 </script>

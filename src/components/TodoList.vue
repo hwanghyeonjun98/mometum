@@ -1,14 +1,14 @@
 <script setup>
 import TodoItem from "@/components/TodoItem.vue";
-import {onMounted, ref} from "vue";
+import {onMounted} from "vue";
 import axios from "axios";
 
-const todos = ref([]);
+const {todos} = defineProps(["todos"]);
+
+const emit = defineEmits(["getTodos"]);
 
 const getTodos = () => {
-	axios.get("http://localhost:3000/todos").then((response) => {
-		todos.value = response.data;
-	});
+	emit("getTodos");
 };
 
 onMounted(() => {

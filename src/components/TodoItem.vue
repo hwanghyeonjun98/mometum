@@ -18,7 +18,6 @@ const todoDelete = (id) => {
 };
 
 const inputCheck = (id) => {
-	console.log(!checked.value);
 	axios.patch(
 		`http://localhost:3000/todos/${id}`,
 		{...todo, isChecked : !checked.value},
