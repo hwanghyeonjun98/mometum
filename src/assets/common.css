@@ -1,0 +1,14 @@
+@charset "UTF-8";
+
+.text-uppercase {
+	text-transform: uppercase;
+}
+
+.text-capitalize {
+	text-transform: capitalize;
+}
+
+.background {
+	width: 100%;
+	min-height: 100vh;
+}
