@@ -25,7 +25,7 @@ onMounted(() => {
 </script>
 
 <template>
-	<div>
+	<div class="time-area">
 		<ul class="time">
 			<li>{{ hour }} :</li>
 			<li>{{ minute }} :</li>
@@ -36,16 +36,5 @@ onMounted(() => {
 </template>
 
 <style scoped>
-.time {
-	display: flex;
-	justify-content: center;
-	align-items: flex-end;
-	gap: 2rem;
-	font-weight: 900;
-	font-size: 4rem;
-}
-
-.time .ampm {
-	font-size: 2.4rem;
-}
+@import "../../src/assets/css/time.css";
 </style>

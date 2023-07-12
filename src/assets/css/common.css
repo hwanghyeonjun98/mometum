@@ -12,13 +12,6 @@ button.btn-round {
 	border-radius: 4px;
 }
 
-.background {
-	width: 100%;
-	min-height: 100vh;
-	padding: 1rem;
-	background: url("");
-}
-
 .todo-text.completed label {
 	text-decoration: line-through;
 }

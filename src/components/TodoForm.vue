@@ -38,28 +38,6 @@ const todoAdd = () => {
 	</form>
 </template>
 
-<style scoped>
-form {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	padding: 1rem;
-	background-color: #fafafa;
-}
+<style>
 
-form input {
-	flex: 3 1 auto;
-}
-
-form button {
-	flex: 0 0 4rem;
-}
-
-.submit-btn {
-	transition: all .2s ease-in-out;
-}
-
-.submit-btn:hover {
-	background-color: #aeaeae;
-}
 </style>

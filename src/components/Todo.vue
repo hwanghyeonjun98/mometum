@@ -3,6 +3,7 @@ import TodoForm from "@/components/TodoForm.vue";
 import TodoList from "@/components/TodoList.vue";
 import {ref} from "vue";
 import axios from "axios";
+import {FontAwesomeIcon} from "@fortawesome/vue-fontawesome";
 
 const todos = ref([]);
 const getTodos = () => {
@@ -14,12 +15,22 @@ const getTodos = () => {
 
 <template>
 	<div class="todo-area">
-		<TodoForm @getTodos="getTodos" />
-		<h4 class="text-capitalize">my todo list</h4>
-		<TodoList :todos="todos" @getTodos="getTodos" />
+		<div class="headers">
+			<button type="button">
+				<font-awesome-icon :icon="['fas', 'window-minimize']" />
+			</button>
+			<button type="button">
+				<font-awesome-icon icon="fa-solid fa-window-maximize" />
+			</button>
+		</div>
+		<div class="todo-body">
+			<h4 class="text-capitalize todo-list-title">my todos</h4>
+			<TodoForm @getTodos="getTodos" />
+			<TodoList :todos="todos" @getTodos="getTodos" />
+		</div>
 	</div>
 </template>
 
-<style scoped>
-
+<style>
+@import "../../src/assets/css/todo.css";
 </style>

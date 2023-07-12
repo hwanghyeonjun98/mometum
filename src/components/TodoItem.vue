@@ -54,30 +54,5 @@ const inputCheck = (id) => {
 	</li>
 </template>
 
-<style scoped>
-.todo,
-.todo-content {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-}
-
-.todo {
-	padding: .5rem;
-	margin-bottom: 1rem;
-	border-bottom: 1px solid rgba(0, 0, 0, .2);
-}
-
-.todo > .todo-content.completed {
-	opacity: .2;
-}
-
-.todo-text {
-	margin: 0;
-}
-
-.todo-text label {
-	padding: .5rem;
-}
-
+<style>
 </style>

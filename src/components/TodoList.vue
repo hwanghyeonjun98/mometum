@@ -29,6 +29,6 @@ const todoDelete = (id) => {
 	</ul>
 </template>
 
-<style scoped>
+<style>
 
 </style>

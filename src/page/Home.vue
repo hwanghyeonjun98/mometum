@@ -11,5 +11,5 @@ import Todo from "@/components/Todo.vue";
 </template>
 
 <style scoped>
-
+@import "../../src/assets/css/home.css";
 </style>

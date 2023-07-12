@@ -1,0 +1,11 @@
+@charset "UTF-8";
+
+.background {
+	width: 100%;
+	min-height: 100vh;
+	padding: 1rem;
+	background: url("");
+	position: relative;
+}
+
+
