@@ -31,7 +31,11 @@ const fullSize = () => {
 	>
 		<template #modal-body>
 			<div class="modal-body setting-body">
-				<p>asdasd</p>
+				<ul>
+					<li>
+
+					</li>
+				</ul>
 			</div>
 		</template>
 		<template #btn-content>

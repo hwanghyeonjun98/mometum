@@ -34,7 +34,7 @@ const fullSize = () => {
 <template>
 	<FloatModal
 		:class="[`${isModalctive ? 'active' : ''}`, `${isFullScreen ? 'full-size': ''}`]"
-		class="bottom-right"
+		class="todo-area bottom-right"
 		@onFullSize="fullSize"
 		@onModalActive="modalActive"
 	>
