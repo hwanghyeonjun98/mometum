@@ -1,5 +1,5 @@
 <script setup>
-import TodoItem from "@/components/TodoItem.vue";
+import TodoItem from "@/components/todo/TodoItem.vue";
 import {onMounted} from "vue";
 import axios from "@/config/axios";
 

@@ -1,6 +1,6 @@
 <script setup>
-import TodoForm from "@/components/TodoForm.vue";
-import TodoList from "@/components/TodoList.vue";
+import TodoForm from "@/components/todo/TodoForm.vue";
+import TodoList from "@/components/todo/TodoList.vue";
 import {ref} from "vue";
 import axios from "@/config/axios";
 import FloatModal from "@/components/floatmodal/FloatModal.vue";
@@ -53,5 +53,5 @@ const fullSize = () => {
 </template>
 
 <style>
-@import "../../src/assets/css/todo.css";
+@import "../../assets/css/todo.css";
 </style>

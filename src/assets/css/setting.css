@@ -1,0 +1,50 @@
+@charset "UTF-8";
+
+.setting-list li {
+	height: 38px;
+	border-bottom: 1px solid var(--color-gray-2);
+}
+
+
+.setting-list li:first-child {
+	border-top: 1px solid var(--color-gray-2);
+}
+
+.setting-list li:hover,
+.setting-list li:focus,
+.setting-list li:active {
+	background-color: var(--color-gray-2);
+}
+
+.setting-list .setting-item {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 100%;
+	font-size: 1.01rem;
+}
+
+.setting-list .setting-item,
+.setting-list .setting-btn .setting-title {
+	font-weight: 600;
+}
+
+.setting-list .setting-item {
+	padding: .6rem 1rem;
+}
+
+.setting-modal {
+	width: 100%;
+	height: 100%;
+	background-color: #fff;
+	border-radius: 10px;
+	z-index: 210;
+	position: absolute;
+	top: 0;
+	right: 0;
+	transition: all .5s ease-in-out;
+}
+
+.setting-modal.active {
+	right: 0;
+}

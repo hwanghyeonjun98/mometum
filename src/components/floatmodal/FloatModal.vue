@@ -28,6 +28,7 @@ const fullSize = () => {
 		<button type="button" class="btn modal-btn" @click="modalActive">
 			<slot name="btn-content"></slot>
 		</button>
+		<slot name="etc"></slot>
 	</div>
 </template>
 

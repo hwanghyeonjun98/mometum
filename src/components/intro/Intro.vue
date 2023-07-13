@@ -45,5 +45,5 @@ const setUserName = () => {
 </template>
 
 <style>
-@import "../../src/assets/css/intro.css";
+@import "../../assets/css/intro.css";
 </style>

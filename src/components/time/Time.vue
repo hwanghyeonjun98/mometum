@@ -38,5 +38,5 @@ onMounted(() => {
 </template>
 
 <style scoped>
-@import "../../src/assets/css/time.css";
+@import "../../assets/css/time.css";
 </style>
