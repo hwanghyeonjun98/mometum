@@ -18,6 +18,14 @@
 	--color-primary: #4D96FF;
 }
 
+.hidden {
+	visibility: hidden;
+	width: 0;
+	height: 0;
+	overflow: hidden;
+	opacity: 0;
+}
+
 /* 글자(영문) 대소문자 관련 */
 .text-uppercase {
 	text-transform: uppercase;
@@ -30,6 +38,14 @@
 /* 버튼 관련 */
 .btn {
 	padding: .4rem .6rem;
+	height: 30px;
+	transition: background-color .2s ease-in-out;
+}
+
+.btn:hover,
+.btn:focus,
+.btn:active {
+	background-color: #aeaeae;
 }
 
 .btn-round {
@@ -127,4 +143,76 @@ input[id^=todo-check-] {
 
 .toggle-btn-sm .toggle-checkbox:checked ~ .toggle {
 	left: 18px;
+}
+
+/* input 관련 */
+.input-bottom-border {
+	position: relative;
+}
+
+.input-bottom-border + button {
+	margin-left: .6rem;
+}
+
+.input-bottom-border input:not(input[type=checkbox], input[type=radio]) {
+	width: 100%;
+	height: 30px;
+	padding: .4rem;
+}
+
+.input-bottom-border input ~ span {
+	content: '';
+	width: 100%;
+	height: 2px;
+	background-color: var(--color-gray-2);
+	position: absolute;
+	left: 0;
+	bottom: 0;
+}
+
+.input-bottom-border input:not(input[type=checkbox] input[type=radio]) ~ span::after {
+	content: '';
+	width: 0;
+	height: 2px;
+	background-color: var(--color-gray-2);
+	transition: all .5s ease-in-out;
+	position: absolute;
+	left: 0;
+	bottom: 0;
+}
+
+.input-bottom-border input:not(input[type=checkbox] input[type=radio]):not(:placeholder-shown) ~ span::after,
+.input-bottom-border input:not(input[type=checkbox] input[type=radio]):focus ~ span::after {
+	width: 100%;
+	background-color: var(--color-gray-1);
+}
+
+.input-bottom-border input:not(input[type=checkbox] input[type=radio]):invalid ~ span::after {
+	width: 100%;
+	background-color: var(--color-danger);
+}
+
+/* form 알림 관련 */
+p[class^="input-info-"] {
+	width: 100%;
+	padding: .4rem;
+	font-size: .85rem;
+	visibility: hidden;
+	overflow: hidden;
+	opacity: 0;
+	transition: all .4s ease-in-out;
+}
+
+p[class^="input-info-"].active {
+	visibility: visible;
+	overflow: visible;
+	opacity: 1;
+}
+
+.input-info-success {
+	color: var(--color-success);
+}
+
+.input-info-danger {
+	color: var(--color-danger);
 }

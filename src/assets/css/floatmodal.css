@@ -3,11 +3,12 @@
 .modal-area {
 	width: 120px;
 	height: 45px;
-	background-color: transparent;
+	background-color: #ffffff;
 	box-shadow: 2px 2px 15px rgba(0, 0, 0, .2);
 	border-radius: 50px;
 	z-index: 100;
 	position: absolute;
+	overflow: hidden;
 	transition: all .5s ease-in-out;
 }
 

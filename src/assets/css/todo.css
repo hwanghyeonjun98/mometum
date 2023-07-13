@@ -1,5 +1,9 @@
 @charset "UTF-8";
 
+.todo-area .todo-list {
+	margin-top: .6rem;
+}
+
 .todo-area .todo-list-title {
 	margin-bottom: .8rem;
 }
@@ -22,14 +26,6 @@
 
 .todo-area #todo-form button {
 	flex: 0 0 4rem;
-}
-
-.todo-area #todo-form .submit-btn {
-	transition: all .2s ease-in-out;
-}
-
-.todo-area #todo-form .submit-btn:hover {
-	background-color: #aeaeae;
 }
 
 .todo-area .todo,

@@ -18,7 +18,6 @@ const getTodos = () => {
 
 const modalActive = () => {
 	isModalctive.value = !isModalctive.value;
-	console.log("emit", isModalctive.value);
 
 	if (isModalctive.value === false) {
 		isFullScreen.value = false;

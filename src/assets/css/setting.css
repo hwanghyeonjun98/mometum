@@ -33,7 +33,17 @@
 	padding: .6rem 1rem;
 }
 
-.setting-modal {
+.setting-modal .setting-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	height: 34px;
+	margin: .2rem .6rem .6rem;
+	padding: .4rem;
+	border-bottom: 1px solid var(--color-gray-2);
+}
+
+.name-edit-modal {
 	width: 100%;
 	height: 100%;
 	background-color: #fff;
@@ -41,10 +51,22 @@
 	z-index: 210;
 	position: absolute;
 	top: 0;
-	right: 0;
+	right: -100%;
 	transition: all .5s ease-in-out;
 }
 
-.setting-modal.active {
+.name-edit-modal.active {
 	right: 0;
+}
+
+.name-edit-modal-body {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	flex-wrap: wrap;
+	padding: 1rem;
+}
+
+.name-edit-modal-body .input-bottom-border {
+	flex: 1 1 auto;
 }
