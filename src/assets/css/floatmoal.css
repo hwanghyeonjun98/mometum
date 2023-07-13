@@ -1,0 +1,130 @@
+@charset "UTF-8";
+
+.modal-area {
+	width: 120px;
+	height: 45px;
+	background-color: var(--font-color-white);
+	box-shadow: 2px 2px 15px rgba(0, 0, 0, .2);
+	border-radius: 50px;
+	z-index: 100;
+	position: absolute;
+	transition: all .5s ease-in-out;
+}
+
+.modal-area.top-right {
+	top: 1rem;
+	right: 1rem;
+	transform-origin: right top;
+}
+
+.modal-area.top-left {
+	top: 1rem;
+	bottom: 1rem;
+	transform-origin: left top;
+}
+
+.modal-area.bottom-right {
+	right: 1rem;
+	bottom: 1rem;
+	transform-origin: right bottom;
+}
+
+.modal-area.bottom-left {
+	left: 1rem;
+	bottom: 1rem;
+	transform-origin: left bottom;
+}
+
+.modal-area.active {
+	width: 500px;
+	height: 400px;
+	border-radius: 10px;
+	z-index: 200;
+}
+
+.modal-area.active.full-size {
+	width: calc(100% - 2rem);
+	height: calc(100% - 2rem);
+}
+
+.modal-area .modal-wrap {
+	opacity: 0;
+	visibility: hidden;
+	transition: all .5s ease-in-out .5s;
+}
+
+.modal-area.active .modal-wrap {
+	opacity: 1;
+	visibility: visible;
+}
+
+.modal-area .modal-headers {
+	opacity: 0;
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	height: 0;
+	padding: 0;
+}
+
+.modal-area.active .modal-headers {
+	opacity: 1;
+	height: 34px;
+	margin: .2rem .6rem .6rem;
+	padding: .4rem 0;
+	border-bottom: 1px solid var(--color-gray-2);
+}
+
+.modal-area .modal-headers button:hover,
+.modal-area .modal-headers button:focus,
+.modal-area .modal-headers button:active {
+	background-color: var(--color-gray-2);
+	border-radius: 4px;
+}
+
+.modal-area .modal-body {
+	opacity: 1;
+	height: 0;
+	padding: 0;
+	overflow-x: hidden;
+	overflow-y: auto;
+}
+
+.modal-area.active .modal-body {
+	padding: 0 1rem 1rem 1rem;
+	height: 340px;
+}
+
+.modal-area.active.full-size .modal-body {
+	height: calc(100vh - 100px);
+}
+
+.modal-area .modal-btn {
+	width: 100%;
+	height: 100%;
+	font-size: 1.02rem;
+	color: var(--font-color-white);
+	background-color: var(--color-block);
+	border-radius: 50px;
+	opacity: 1;
+	visibility: visible;
+	transition: opacity .5s ease-in-out .2s;
+}
+
+.modal-area .modal-btn span {
+	margin-left: .4rem;
+	font-weight: 700;
+}
+
+.modal-area.active .modal-btn {
+	opacity: 0;
+	width: 0;
+	height: 0;
+	padding: 0;
+	visibility: hidden;
+}
+
+.modal-area:hover .modal-btn {
+	color: var(--color-block);
+	background-color: var(--color-gray-1);
+}

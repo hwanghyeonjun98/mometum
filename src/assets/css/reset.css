@@ -6,6 +6,14 @@
 	box-sizing: border-box;
 }
 
+html,
+body {
+	overflow: hidden;
+	color: var(--default-font-color);
+	line-height: 1.25;
+	vertical-align: bottom;
+}
+
 ul,
 ol {
 	margin: 0;
@@ -15,7 +23,7 @@ ol {
 
 a {
 	text-decoration: none;
-	color: #000
+	color: var(--default-font-color);
 }
 
 button {
@@ -26,7 +34,6 @@ button {
 }
 
 button, label {
-	display: inline-block;
 	cursor: pointer;
 }
 
@@ -35,4 +42,8 @@ input[type=text] {
 	outline: none;
 	background-color: transparent;
 	padding: .2rem;
+}
+
+a, span, label, button {
+	display: inline-block;
 }

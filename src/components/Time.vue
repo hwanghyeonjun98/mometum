@@ -27,8 +27,10 @@ onMounted(() => {
 <template>
 	<div class="time-area">
 		<ul class="time">
-			<li>{{ hour }} :</li>
-			<li>{{ minute }} :</li>
+			<li>{{ hour }}</li>
+			<li>:</li>
+			<li>{{ minute }}</li>
+			<li>:</li>
 			<li>{{ second }}</li>
 			<li class="text-uppercase ampm">{{ ampm }}</li>
 		</ul>

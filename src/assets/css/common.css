@@ -1,5 +1,23 @@
 @charset "UTF-8";
 
+:root {
+	--default-font-color: #393646;
+	--font-color-white: #FCFAFA;
+
+	--color-block: #3C4048;
+	--color-gray-1: #B2B2B2;
+	--color-gray-2: #EAEAEA;
+	--color-red-1: #FFEADD;
+	--color-red-2: #FCAEAE;
+	--color-red-3: #FF8989;
+	--color-red-4: #FF6666;
+
+	--color-danger: #FF6B6B;
+	--color-success: #3C9D9B;
+	--color-warning: #FFD93D;
+	--color-primary: #4D96FF;
+}
+
 .text-uppercase {
 	text-transform: uppercase;
 }
@@ -8,8 +26,24 @@
 	text-transform: capitalize;
 }
 
-button.btn-round {
+.btn {
+	padding: .4rem .6rem;
+}
+
+.btn-round {
 	border-radius: 4px;
+}
+
+.delete-btn {
+	color: var(--font-color-white);
+	background-color: var(--color-red-4);
+}
+
+.delete-btn:hover,
+.delete-btn:focus,
+.delete-btn:active {
+	color: var(--color-block);
+	background-color: var(--color-red-3);
 }
 
 .todo-text.completed label {

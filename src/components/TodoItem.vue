@@ -1,5 +1,5 @@
 <script setup>
-import axios from "axios";
+import axios from "@/config/axios";
 import {ref} from "vue";
 
 const {todo} = defineProps({
@@ -19,7 +19,7 @@ const todoDelete = (id) => {
 
 const inputCheck = (id) => {
 	axios.patch(
-		`http://localhost:3000/todos/${id}`,
+		`/todos/${id}`,
 		{...todo, isChecked : !checked.value},
 		{
 			headers : {
@@ -32,8 +32,8 @@ const inputCheck = (id) => {
 
 <template>
 	<li class="todo">
+		<div :class="checked ? 'completed' : ''" class="todo-color-bar"></div>
 		<div :class="checked ? 'completed' : ''" class="todo-content">
-			<div :class="checked ? 'completed' : 'doing'" class="color-head"></div>
 			<div class="todo-checkbox">
 				<input
 					type="checkbox"
@@ -49,7 +49,9 @@ const inputCheck = (id) => {
 			</p>
 		</div>
 		<div class="delete">
-			<button type="button" @click="todoDelete(todo.id)">삭제</button>
+			<button type="button" class="btn btn-round delete-btn" @click="todoDelete(todo.id)">
+				<font-awesome-icon :icon="['fas', 'trash-can']" />
+			</button>
 		</div>
 	</li>
 </template>

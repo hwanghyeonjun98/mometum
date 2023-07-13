@@ -1,12 +1,16 @@
 <script setup>
 import Time from "@/components/Time.vue";
 import Todo from "@/components/Todo.vue";
+import Intoro from "@/components/Intro.vue";
+import Setting from "@/components/Setting.vue";
 </script>
 
 <template>
 	<div class="background">
 		<Time />
-		<todo />
+		<Intoro />
+		<Todo />
+		<Setting />
 	</div>
 </template>
 

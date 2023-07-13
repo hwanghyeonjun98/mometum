@@ -9,4 +9,5 @@ import Home from "@/page/Home.vue";
 <style>
 @import "../src/assets/css/reset.css";
 @import "../src/assets/css/common.css";
+@import "../src/assets/css/floatmoal.css";
 </style>

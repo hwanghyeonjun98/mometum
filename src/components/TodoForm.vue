@@ -1,6 +1,6 @@
 <script setup>
 import {ref} from "vue";
-import axios from "axios";
+import axios from "@/config/axios";
 
 const emit = defineEmits(["getTodos"]);
 
@@ -13,7 +13,7 @@ const onTodoAdd = () => {
 		created   : new Date().getTime(),
 	};
 
-	axios.post("http://localhost:3000/todos", todoItem, {
+	axios.post("/todos", todoItem, {
 		headers : {
 			"Content-Type" : "application/json",
 		},

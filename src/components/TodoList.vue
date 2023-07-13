@@ -1,7 +1,7 @@
 <script setup>
 import TodoItem from "@/components/TodoItem.vue";
 import {onMounted} from "vue";
-import axios from "axios";
+import axios from "@/config/axios";
 
 const {todos} = defineProps(["todos"]);
 
@@ -16,7 +16,7 @@ onMounted(() => {
 });
 
 const todoDelete = (id) => {
-	axios.delete(`http://localhost:3000/todos/${id}`).then(() => {
+	axios.delete(`/todos/${id}`).then(() => {
 		getTodos();
 	});
 };
