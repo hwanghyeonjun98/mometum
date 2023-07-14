@@ -15,5 +15,7 @@ export default defineConfig({
 	},
 	transpileDependencies : true,
 	publicPath            : "/mometum",
-	outDir                : "./docs",
+	build                 : {
+		outDir : "docs",
+	},
 });
