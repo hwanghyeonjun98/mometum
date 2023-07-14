@@ -13,9 +13,7 @@ export default defineConfig({
 			"@" : fileURLToPath(new URL("./src", import.meta.url)),
 		},
 	},
-	build                 : {
-		outDir : "./docs",
-	},
 	transpileDependencies : true,
 	publicPath            : "/mometum",
+	outDir                : "./docs",
 });
