@@ -63,7 +63,7 @@
 	background-color: var(--color-success);
 }
 
-.todo-area .todo > .todo-content.completed {
+.todo-area .todo > .todo-content.completed .todo-text {
 	opacity: .2;
 }
 

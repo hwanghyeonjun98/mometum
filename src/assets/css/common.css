@@ -88,12 +88,12 @@ input[id^=todo-check-] {
 	content: '';
 	position: absolute;
 	top: 47%;
-	left: 50%;
+	left: 53.2%;
 	transform: translate(-50%, -50%) rotateZ(45deg);
 	width: 4px;
 	height: 8px;
-	border-right: 3px solid blue;
-	border-bottom: 3px solid blue;
+	border-right: 3px solid var(--color-primary);
+	border-bottom: 3px solid var(--color-primary);
 	border-radius: 2px;
 	opacity: 0;
 	transition: opacity 0.2s;

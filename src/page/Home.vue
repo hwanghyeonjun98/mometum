@@ -3,7 +3,7 @@ import Time from "@/components/time/Time.vue";
 import Todo from "@/components/todo/Todo.vue";
 import Intoro from "@/components/intro/Intro.vue";
 import Setting from "@/components/setting/Setting.vue";
-import {onMounted, ref, watch} from "vue";
+import {onMounted, ref} from "vue";
 
 const localStorageUserName = localStorage.getItem("userName");
 const isSuccess = ref(false);
@@ -17,10 +17,10 @@ onMounted(() => {
 		userName.value = localStorageUserName;
 		isUserName.value = false;
 	}
-});
 
-watch(userName, (newName, oldName) => {
-	userName.value = newName;
+	if (localStorage.getItem("time12") === null) {
+		localStorage.setItem("time12", "false");
+	}
 });
 
 const setUserName = (value) => {
@@ -60,7 +60,10 @@ const nameEdit = (value) => {
 </script>
 
 <template>
-	<div class="background">
+	<div
+		class="background"
+		style="background-image: url('/src/assets/images/ocean-1867285_1280.jpg')"
+	>
 		<Time />
 		<Intoro :isUserName="isUserName" :userName="userName" @onUsername="setUserName" />
 		<div class="tmp">

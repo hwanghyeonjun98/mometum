@@ -1,32 +1,34 @@
 <script setup>
-import axios from "@/config/axios";
 import {ref} from "vue";
 
-const {todo} = defineProps({
-	todo : {
+const {todo, todos} = defineProps({
+	todo  : {
 		type     : Object,
+		required : true,
+	},
+	todos : {
+		type     : Array,
 		required : true,
 	},
 });
 
-const emit = defineEmits(["onTodoDelete"]);
-
 const checked = ref(todo.isChecked);
 
-const todoDelete = (id) => {
-	emit("onTodoDelete", id);
+const todoDelete = () => {
+	const index = todos.indexOf(todo);
+	todos.splice(index, 1);
+
+	localStorage.setItem("todos", JSON.stringify(todos));
 };
 
-const inputCheck = (id) => {
-	axios.patch(
-		`/todos/${id}`,
-		{...todo, isChecked : !checked.value},
-		{
-			headers : {
-				"Content-Type" : "application/json",
-			},
-		},
-	);
+const todoUpdate = () => {
+	const index = todos.indexOf(todo);
+	todos[index] = {
+		...todos[index],
+		isChecked : !checked.value,
+	};
+
+	localStorage.setItem("todos", JSON.stringify(todos));
 };
 </script>
 
@@ -37,19 +39,19 @@ const inputCheck = (id) => {
 			<div class="todo-checkbox">
 				<input
 					type="checkbox"
-					:id="`todo-check-${todo.id}`"
+					:id="`todo-check-${todo.created}`"
 					v-model="checked"
 					name="todo"
-					@click="inputCheck(todo.id)"
+					@click="todoUpdate"
 				>
 				<span></span>
 			</div>
 			<p :class="checked ? 'completed' : ''" class="todo-text">
-				<label :for="`todo-check-${todo.id}`">{{ todo.content }}</label>
+				<label :for="`todo-check-${todo.created}`">{{ todo.content }}</label>
 			</p>
 		</div>
 		<div class="delete">
-			<button type="button" class="btn btn-round delete-btn" @click="todoDelete(todo.id)">
+			<button type="button" class="btn btn-round delete-btn" @click="todoDelete">
 				<font-awesome-icon :icon="['fas', 'trash-can']" />
 			</button>
 		</div>

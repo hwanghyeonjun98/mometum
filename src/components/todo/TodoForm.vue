@@ -1,33 +1,25 @@
 <script setup>
 import {ref} from "vue";
-import axios from "@/config/axios";
 
-const emit = defineEmits(["getTodos"]);
+const emit = defineEmits(["getTodos", "onTodoAdd"]);
 
 const todoInput = ref("");
 
-const onTodoAdd = () => {
+const todoAdd = () => {
+	if (todoInput.value === "") {
+		alert("할일을 입력하세요!");
+		return false;
+	}
+
 	const todoItem = {
 		content   : todoInput.value,
 		isChecked : false,
 		created   : new Date().getTime(),
 	};
 
-	axios.post("/todos", todoItem, {
-		headers : {
-			"Content-Type" : "application/json",
-		},
-	}).then(() => {
-		emit("getTodos");
-		todoInput.value = "";
-	});
-};
-const todoAdd = () => {
-	if (todoInput.value === "") {
-		alert("할일을 입력하세요!");
-		return false;
-	}
-	onTodoAdd();
+	emit("onTodoAdd", todoItem);
+
+	todoInput.value = "";
 };
 </script>
 

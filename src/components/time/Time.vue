@@ -6,20 +6,37 @@ const minute = ref();
 const second = ref();
 const ampm = ref("");
 
+const isTime12 = ref(localStorage.getItem("time12"));
+
 const time = () => {
 	let date = new Date();
 	hour.value = String(date.getHours()).padStart(2, "0");
+	minute.value = String(date.getMinutes()).padStart(2, "0");
+	second.value = String(date.getSeconds()).padStart(2, "0");
+};
+
+const time12 = () => {
+	let date = new Date();
+	hour.value = String(date.getHours() % 12).padStart(2, "0");
 	minute.value = String(date.getMinutes()).padStart(2, "0");
 	second.value = String(date.getSeconds()).padStart(2, "0");
 	ampm.value = hour % 12 > 0 ? "am" : "pm";
 };
 
 onMounted(() => {
-	time();
-
-	setInterval(() => {
+	if (isTime12.value === "false") {
 		time();
-	}, 1000);
+
+		setInterval(() => {
+			time();
+		}, 1000);
+	} else {
+		time12();
+
+		setInterval(() => {
+			time12();
+		}, 1000);
+	}
 });
 
 </script>

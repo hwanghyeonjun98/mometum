@@ -1,19 +1,32 @@
 <script setup>
 import TodoForm from "@/components/todo/TodoForm.vue";
 import TodoList from "@/components/todo/TodoList.vue";
-import {ref} from "vue";
-import axios from "@/config/axios";
+import {onMounted, ref} from "vue";
 import FloatModal from "@/components/floatmodal/FloatModal.vue";
 import {FontAwesomeIcon} from "@fortawesome/vue-fontawesome";
+
+const localTodos = localStorage.getItem("todos");
+const todoJson = JSON.parse(localTodos);
 
 const isModalctive = ref(false);
 const isFullScreen = ref(false);
 
 const todos = ref([]);
+
 const getTodos = () => {
-	axios.get("/todos?_sort=id&_order=desc").then((response) => {
-		todos.value = response.data;
-	});
+	todoJson.sort((a, b) => b.created - a.created);
+
+	todos.value = todoJson;
+};
+
+onMounted(() => {
+	getTodos();
+});
+
+const todoAdd = (item) => {
+	todos.value.unshift(item);
+
+	localStorage.setItem("todos", JSON.stringify(todos.value));
 };
 
 const modalActive = () => {
@@ -40,7 +53,7 @@ const fullSize = () => {
 		<template #modal-body>
 			<div class="modal-body todo-body">
 				<h4 class="text-capitalize todo-list-title">my todos</h4>
-				<TodoForm @getTodos="getTodos" />
+				<TodoForm @getTodos="getTodos" @onTodoAdd="todoAdd" />
 				<TodoList :todos="todos" @getTodos="getTodos" />
 			</div>
 		</template>
