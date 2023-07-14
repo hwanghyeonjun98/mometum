@@ -1,10 +1,10 @@
 <script setup>
 import {FontAwesomeIcon} from "@fortawesome/vue-fontawesome";
 import FloatModal from "@/components/floatmodal/FloatModal.vue";
-import {ref, watch} from "vue";
+import {onMounted, ref, watch} from "vue";
 
 const storage = localStorage.getItem("time12");
-const isTime12 = ref(storage);
+const isTime12 = ref(false);
 const isModalctive = ref(false);
 const isFullScreen = ref(false);
 const isNameEditModal = ref(false);
@@ -27,6 +27,11 @@ const {isSuccess, formInfoMessage} = defineProps({
 });
 
 const emit = defineEmits(["onNameEdit"]);
+
+onMounted(() => {
+	isTime12.value = storage === "true";
+	console.log(isTime12.value);
+});
 
 const modalActive = () => {
 	isModalctive.value = !isModalctive.value;
@@ -59,11 +64,9 @@ const nameEditModalActive = () => {
 };
 
 const time12 = () => {
-
 	watch(isTime12, (newValue) => {
 		localStorage.setItem("time12", String(newValue));
 	});
-
 };
 </script>
 
@@ -85,7 +88,7 @@ const time12 = () => {
 					</li>
 					<li class="setting-item">
 						<span class="setting-title"><label for="isTime12" @click="time12">12시간제</label></span>
-						<label for="isTime12">
+						<label for="isTime12" @click="time12">
 							<span class="toggle-btn-sm">
 								<input type="checkbox" id="isTime12" v-model="isTime12" class="toggle-checkbox" name="isTime12">
 								<span class="toggle-backgound"></span>

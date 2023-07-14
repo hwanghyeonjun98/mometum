@@ -15,7 +15,6 @@ const {userName, isUserName} = defineProps({
 const emit = defineEmits(["onUsername"]);
 
 const name = ref("");
-const isUser = ref(isUserName);
 
 const setUserName = () => {
 	emit("onUsername", name.value);
@@ -24,7 +23,7 @@ const setUserName = () => {
 
 <template>
 	<div class="intro">
-		<div v-if="isUser" class="set-user-form">
+		<div v-if="isUserName" class="set-user-form">
 			<input type="text" id="name" v-model="name" autocomplete="off" name="name" placeholder="이름을 입력하세요.">
 			<button type="button" @click="setUserName">입력</button>
 		</div>

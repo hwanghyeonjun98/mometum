@@ -5,8 +5,8 @@ const hour = ref();
 const minute = ref();
 const second = ref();
 const ampm = ref("");
-
-const isTime12 = ref(localStorage.getItem("time12"));
+const localTime = localStorage.getItem("time12");
+const isTime12 = ref("false");
 
 const time = () => {
 	let date = new Date();
@@ -24,6 +24,10 @@ const time12 = () => {
 };
 
 onMounted(() => {
+	if (localTime) {
+		isTime12.value = localTime;
+	}
+
 	if (isTime12.value === "false") {
 		time();
 
@@ -31,6 +35,7 @@ onMounted(() => {
 			time();
 		}, 1000);
 	} else {
+
 		time12();
 
 		setInterval(() => {

@@ -7,7 +7,7 @@ import {onMounted, ref} from "vue";
 
 const localStorageUserName = localStorage.getItem("userName");
 const isSuccess = ref(false);
-const isUserName = ref(false);
+const isUserName = ref(true);
 const isInfoVisible = ref(false);
 const userName = ref("");
 const formInfoMessage = ref("");

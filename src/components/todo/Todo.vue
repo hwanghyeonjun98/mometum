@@ -20,7 +20,9 @@ const getTodos = () => {
 };
 
 onMounted(() => {
-	getTodos();
+	if (todoJson !== null) {
+		getTodos();
+	}
 });
 
 const todoAdd = (item) => {
